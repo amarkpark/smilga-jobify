@@ -10,17 +10,17 @@ const links: NavLink[] = [
   {
     href: "/add-job",
     label: "add job",
-    icon: <NotebookTabs />,
+    icon: <NotebookPen />,
   },
   {
     href: "/jobs",
     label: "all jobs",
-    icon: <RollerCoaster />,
+    icon: <NotebookTabs />,
   },
   {
     href: "/stats",
     label: "stats",
-    icon: <NotebookPen />,
+    icon: <RollerCoaster />,
   },
 ];
 
