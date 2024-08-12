@@ -5,8 +5,10 @@ import ThemeToggle from "./ThemeToggle";
 function Navbar() {
   return (
     <nav className="bg-muted py-4 sm:px-16 lg:px-24 flex items-center justify-between">
-      <LinksDropdown />
-      <div className="flex items-center gap-x-4">
+      <div>
+        <LinksDropdown />
+      </div>
+      <div className="flex items-center gap-x-4 mr-2">
         <ThemeToggle />
         <UserButton />
       </div>
