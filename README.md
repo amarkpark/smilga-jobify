@@ -1,3 +1,15 @@
+Project is part of ongoing learning in [udemy.com/course/nextjs-open-ai/](udemy.com/course/nextjs-open-ai/)
+
+This is the third project in the course: "Jobify"
+
+*ToDo:* (my own additions)
+
+- OK, holy crap the hoops you have to jump through to set one icon to OPEN the shadcn dropdown menu and a second icon to CLOSE the dropdown menu - involving monkey-patching the radix-ui primitives - is ridiculous. Linking this [solution for accordion](https://github.com/shadcn-ui/ui/issues/1133) in order to revisit this later. :alembic:
+
+The rest of what is below is original canned readme which may or may not change over time.
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
