@@ -6,6 +6,11 @@ This is the third project in the course: "Jobify"
 
 - OK, holy crap the hoops you have to jump through to set one icon to OPEN the shadcn dropdown menu and a second icon to CLOSE the dropdown menu - involving monkey-patching the radix-ui primitives - is ridiculous. Linking this [solution for accordion](https://github.com/shadcn-ui/ui/issues/1133) in order to revisit this later. :alembic:
 - Update all assets and theme color - maybe a turquoise?
+- Address punycode deprecation
+  ```sh
+  (node:48480) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+  (Use `node --trace-deprecation ...` to show where the warning was created)
+  ```
 
 The rest of what is below is original canned readme which may or may not change over time.
 
