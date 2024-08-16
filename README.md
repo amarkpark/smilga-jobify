@@ -11,6 +11,7 @@ This is the third project in the course: "Jobify"
   (node:48480) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
   (Use `node --trace-deprecation ...` to show where the warning was created)
   ```
+- Level up this code with (JSDoc)[https://github.com/jsdoc/jsdoc]
 
 The rest of what is below is original canned readme which may or may not change over time.
 

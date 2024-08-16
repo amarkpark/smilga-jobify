@@ -1,3 +1,4 @@
+import { Control } from "react-hook-form";
 import * as z from "zod";
 
 export type JobType = {
@@ -39,3 +40,15 @@ export const createAndEditJobSchema = z.object({
 });
 
 export type CreateAndEditJobType = z.infer<typeof createAndEditJobSchema>;
+
+export type CustomFormFieldProps = {
+  name: string;
+  control: Control<any>;
+};
+
+export type CustomFormSelectProps = {
+  name: string;
+  control: Control<any>;
+  items: string[];
+  labelText: string;
+};
