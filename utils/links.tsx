@@ -18,8 +18,8 @@ const links: NavLink[] = [
     icon: <NotebookTabs />,
   },
   {
-    href: "/stats",
-    label: "stats",
+    href: "/analysis",
+    label: "analysis",
     icon: <RollerCoaster />,
   },
 ];
