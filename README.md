@@ -12,6 +12,10 @@ This is the third project in the course: "Jobify"
   (Use `node --trace-deprecation ...` to show where the warning was created)
   ```
 - Level up this code with (JSDoc)[https://github.com/jsdoc/jsdoc]
+- Add date-applied
+- Add platform applied
+- Add URL for job post
+
 
 The rest of what is below is original canned readme which may or may not change over time.
 

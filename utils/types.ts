@@ -22,6 +22,7 @@ export enum JobStatus {
 export enum JobMode {
   FullTime = "full-time",
   PartTime = "part-time",
+  Contract = "contract",
   Internship = "internship",
 }
 
