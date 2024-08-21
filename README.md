@@ -15,7 +15,7 @@ This is the third project in the course: "Jobify"
 - Add date-applied
 - Add platform applied
 - Add URL for job post
-
+- Add [eslint-import-resolver-typescript](https://www.npmjs.com/package/eslint-import-resolver-typescript)
 
 The rest of what is below is original canned readme which may or may not change over time.
 
