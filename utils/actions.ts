@@ -10,6 +10,9 @@ import {
 import { redirect } from "next/navigation";
 import { Prisma } from "@prisma/client";
 import dayjs from "dayjs";
+import { useToast } from "@/components/ui/use-toast";
+
+const { toast } = useToast();
 
 function authenticateAndRiedirect(): string {
   const { userId } = auth();
@@ -29,6 +32,8 @@ export async function createJobAction(values: CreateAndEditJobType)
     // values already validated on front end
     // this is secondary validation for the back end
     createAndEditJobSchema.parse(values);
+    console.log("prisma client", prisma);
+    console.log("values to pass into prisma", values);
 
     const job:JobType = await prisma.job.create({
       data: {
@@ -36,9 +41,17 @@ export async function createJobAction(values: CreateAndEditJobType)
         clerkId: userId,
       },
     });
+    console.log("job returned",job);
+    toast({
+      description: job.position + " created",
+    })
     return job;
   } catch (error) {
     console.error(error);
+    toast({
+      description: "Error creating job",
+      variant: "destructive",
+    })
     return null;
   }
 };
