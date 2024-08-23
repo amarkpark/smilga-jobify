@@ -11,11 +11,11 @@ This is the third project in the course: "Jobify"
   (node:48480) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
   (Use `node --trace-deprecation ...` to show where the warning was created)
   ```
-- Level up this code with (JSDoc)[https://github.com/jsdoc/jsdoc]
+- Level up this code with (JSDoc)[https://github.com/jsdoc/jsdoc] and https://jsdoc.app/ 
 - Add date-applied
 - Add platform applied
 - Add URL for job post
-- Add [eslint-import-resolver-typescript](https://www.npmjs.com/package/eslint-import-resolver-typescript)
+- Add [eslint-import-resolver-typescript](https://www.npmjs.com/package/eslint-import-resolver-typescript) ? importer error seems to have resolved itself...
 
 The rest of what is below is original canned readme which may or may not change over time.
 

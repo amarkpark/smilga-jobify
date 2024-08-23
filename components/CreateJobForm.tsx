@@ -13,10 +13,12 @@ import {
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 
-// why is this import complaining?
-// Cannot find module './FormComponents' or its corresponding type declarations.ts(2307)
 import { CustomFormField, CustomFormSelect } from "./FormComponents";
 
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { createJobAction } from "@/utils/actions";
+import { useToast } from "@/components/ui/use-toast";
+import { useRouter } from "next/navigation";
 function CreateJobForm() {
   // 1. Define your form.
   const form = useForm<CreateAndEditJobType>({
@@ -30,10 +32,36 @@ function CreateJobForm() {
     },
   });
 
+  const queryClient = useQueryClient();
+  const { toast } = useToast();
+  const router = useRouter();
+  
+  const { mutate, isPending } = useMutation({
+    mutationFn: (values: CreateAndEditJobType) => createJobAction(values),
+    onSuccess: (data) => {
+      if (!data) {
+        toast({
+          description: "Error creating job",
+          variant: "destructive",
+        });
+        return;
+      }
+      toast({
+        description: data?.position + " created",
+      });
+
+      queryClient.invalidateQueries({queryKey: ["jobs"]});
+      queryClient.invalidateQueries({queryKey: ["stats"]});
+      queryClient.invalidateQueries({queryKey: ["charts"]});
+
+      // form.reset(); doesn't reset the `<select>`s
+      router.push("/jobs");
+    },
+  });
+
   function onSubmit(values: CreateAndEditJobType) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+    console.log("CreateJobForm onSubmit",values);
+    mutate(values);
   }
 
   return (
@@ -69,8 +97,12 @@ function CreateJobForm() {
             items={Object.values(JobMode)}
           />
 
-          <Button type="submit" className="self-end capitalize">
-            create job
+          <Button
+            className="self-end capitalize"
+            disabled={isPending}
+            type="submit"
+          >
+            {isPending ? "pending..." : "create job"}
           </Button>
         </div>
       </form>
