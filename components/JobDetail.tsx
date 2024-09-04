@@ -1,9 +1,10 @@
 
-function JobDetail() {
+function JobDetail({icon, text}: {icon:React.ReactNode, text: string}) {
   return (
-    <h1 className="text-3xl">
-      JobDetail
-    </h1>
+    <div className="flex items-center gap-x-2">
+      {icon}
+      {text}
+    </div>
   )
 }
 

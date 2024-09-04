@@ -17,6 +17,8 @@ import JobDetail from "./JobDetail";
 import DeleteJobButton from "./DeleteJobButton";
 
 function JobCard({ job }: { job: JobType }) {
+  const date = new Date(job.createdAt).toLocaleDateString();
+
   return (
     <Card className="bg-muted">
       <CardHeader>
@@ -24,12 +26,19 @@ function JobCard({ job }: { job: JobType }) {
         <CardDescription>{job.company}</CardDescription>
       </CardHeader>
       <Separator />
-      <CardContent></CardContent>
+      <CardContent className="mt-4 grid grid-cols-2 gap-4">
+        <JobDetail icon={<Briefcase />} text={job.mode} />
+        <JobDetail icon={<MapPin />} text={job.location} />
+        <JobDetail icon={<CalendarDays />} text={date} />
+        <Badge className="w-32 justify-center">
+          <JobDetail icon={<RadioTower className="h-4 w-4"/>} text={job.status} />
+        </Badge>
+      </CardContent>
       <CardFooter className="flex gap-4">
         <Button asChild size="sm">
           <Link href={`/jobs/${job.id}`}>Edit</Link>
         </Button>
-        <DeleteJobButton job={job} />
+        <DeleteJobButton />
       </CardFooter>
     </Card>
   )
