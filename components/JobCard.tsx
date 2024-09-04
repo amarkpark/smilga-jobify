@@ -21,6 +21,7 @@ function JobCard({ job }: { job: JobType }) {
 
   return (
     <Card className="bg-muted">
+      <input hidden data-id={job.id} data-uid={job.clerkId} />
       <CardHeader>
         <CardTitle>{job.position}</CardTitle>
         <CardDescription>{job.company}</CardDescription>
@@ -38,7 +39,7 @@ function JobCard({ job }: { job: JobType }) {
         <Button asChild size="sm">
           <Link href={`/jobs/${job.id}`}>Edit</Link>
         </Button>
-        <DeleteJobButton />
+        <DeleteJobButton id={job.id} />
       </CardFooter>
     </Card>
   )

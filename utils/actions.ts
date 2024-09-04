@@ -13,7 +13,7 @@ import { Prisma } from "@prisma/client";
 import dayjs from "dayjs";
 import { useToast } from "@/components/ui/use-toast";
 
-function authenticateAndRiedirect(): string {
+function authenticateAndRedirect(): string {
   const { userId } = auth();
   if (!userId) redirect("/");
   
@@ -25,7 +25,7 @@ export async function createJobAction(values: CreateAndEditJobType)
   // Test of button states in dev
   await new Promise((resolve) => setTimeout(resolve, 3000));
 
-  const userId = authenticateAndRiedirect();
+  const userId = authenticateAndRedirect();
 
   try {
     // values already validated on front end
@@ -56,7 +56,7 @@ export async function getAllJobsAction({
   page: number;
   totalPages: number;
 }> {
-  const userId = authenticateAndRiedirect();
+  const userId = authenticateAndRedirect();
 
   try {
     let whereClause: Prisma.JobWhereInput = {
@@ -119,3 +119,20 @@ export async function getAllJobsAction({
     }
   }
 };
+
+export async function deleteJobAction(id: string): Promise<JobType | null> {
+  const userId = authenticateAndRedirect();
+
+  try {
+    const job: JobType = await prisma.job.delete({
+      where: {
+        id,
+        clerkId: userId,
+      },
+    });
+    return job;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
