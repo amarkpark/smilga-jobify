@@ -2,7 +2,7 @@ Project is part of ongoing learning in [udemy.com/course/nextjs-open-ai/](udemy.
 
 This is the third project in the course: "Jobify"
 
-*ToDo:* (my own additions)
+### *ToDo:* (my own additions)
 
 - Fix the menu-stays-open error
 - OK, holy crap the hoops you have to jump through to set one icon to OPEN the shadcn dropdown menu and a second icon to CLOSE the dropdown menu - involving monkey-patching the radix-ui primitives - is ridiculous. Linking this [solution for accordion](https://github.com/shadcn-ui/ui/issues/1133) in order to revisit this later. :alembic:
@@ -17,6 +17,11 @@ This is the third project in the course: "Jobify"
 - Add platform applied
 - Add URL for job post
 - Add [eslint-import-resolver-typescript](https://www.npmjs.com/package/eslint-import-resolver-typescript) ? importer error seems to have resolved itself...
+
+### Seed Data
+
+- edit prisma/seed.js to include your own clerkId
+- run `node prisma/seed.js` in a terminal window
 
 The rest of what is below is original canned readme which may or may not change over time.
 
