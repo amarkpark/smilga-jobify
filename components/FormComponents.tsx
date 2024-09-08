@@ -54,9 +54,14 @@ export function CustomFormSelect({
             </FormControl>
             <SelectContent>
               {items.map((item) => {
+                const itemKey = Array.isArray(item) ? item.keys().toString() : item;
+                const itemValue = Array.isArray(item) ? item.values().toString() : item;
                 return (
-                  <SelectItem key={item} value={item}>
-                    {item}
+                  <SelectItem 
+                    key={itemKey} 
+                    value={itemValue}
+                  >
+                    {itemValue}
                   </SelectItem>
                 );
               })}

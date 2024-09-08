@@ -3,6 +3,7 @@
 import prisma from "./db";
 import { auth } from "@clerk/nextjs/server";
 import {
+  JobStatus,
   JobType,
   GetAllJobsActionTypes,
   CreateAndEditJobType, 
@@ -179,5 +180,53 @@ export async function deleteJobAction(id: string): Promise<JobType | null> {
   } catch (error) {
     console.error(error);
     return null;
+  }
+}
+
+export async function getStatsAction(): Promise<{
+  [JobStatus.Applied]: number;
+  [JobStatus.InitialInterview]: number;
+  [JobStatus.TechInterview]: number;
+  [JobStatus.FinalInterview]: number;
+  [JobStatus.Offer]: number;
+  [JobStatus.Rejected]: number;
+}> {
+  const userId = authenticateAndRedirect();
+  // just to show Skeleton
+  // await new Promise((resolve) => setTimeout(resolve, 5000));
+  try {
+    const stats = await prisma.job.groupBy({
+      by: ['status'],
+      _count: {
+        status: true,
+      },
+      where: {
+        clerkId: userId, // replace userId with the actual clerkId
+      },
+    });
+
+    console.log("getStatsAction stats", stats);
+
+    const statsObject = stats.reduce((acc, curr) => {
+      acc[curr.status] = curr._count.status;
+      return acc;
+    }, {} as Record<string, number>);
+    console.log("getStatsAction statsObject", statsObject);
+
+    const defaultStats = {
+      [JobStatus.Applied]: 0,
+      [JobStatus.InitialInterview]: 0,
+      [JobStatus.TechInterview]: 0,
+      [JobStatus.FinalInterview]: 0,
+      [JobStatus.Offer]: 0,
+      [JobStatus.Rejected]: 0,
+      ...statsObject,
+    };
+
+    console.log("getStatsAction defaultStats", defaultStats);
+    return defaultStats;
+  } catch (error) {
+    console.error(error);
+    redirect('/jobs');
   }
 }
