@@ -4,7 +4,8 @@ This is the third project in the course: "Jobify"
 
 ### *ToDo:* (my own additions)
 
-- Fix the nav-menu-stays-open error
+- FIX the `Warning: XAxis: Support for defaultProps will be removed from function components in a future major release. Use JavaScript default parameters instead.` error from recharts in ChartsContainer update
+- FIX the nav-menu-stays-open error
 - OK, holy crap the hoops you have to jump through to set one icon to OPEN the shadcn dropdown menu and a second icon to CLOSE the dropdown menu - involving monkey-patching the radix-ui primitives - is ridiculous. Linking this [solution for accordion](https://github.com/shadcn-ui/ui/issues/1133) in order to revisit this later. :alembic:
 - Update all assets and theme color - maybe a turquoise?
 - Address punycode deprecation
@@ -14,7 +15,6 @@ This is the third project in the course: "Jobify"
   ```
 - Level up this code with (JSDoc)[https://github.com/jsdoc/jsdoc] and https://jsdoc.app/ 
 - Add date-applied
-- FIX the search so that it will actually limit data by the selected job status - I think this has to do with transitioning into and out of the `JobStatus[statusKey]` or in here somewhere `components/SearchForm.tsx`
 - Add platform applied
 - Add URL for job post
 - Add ability to edit dates retrieved for Analytics
@@ -22,6 +22,7 @@ This is the third project in the course: "Jobify"
 - Add ability to track the furthest status achieved in any one application - want to see if candidate got to interview stage before being discounted.
 
 ### Completed resolved or deprioritized *ToDo's*
+- FIX the search so that it will actually limit data by the selected job status - I think this has to do with transitioning into and out of the `JobStatus[statusKey]` or in here somewhere `components/SearchForm.tsx`
 - ~~Add [eslint-import-resolver-typescript](https://www.npmjs.com/package/eslint-import-resolver-typescript) ?~~ importer error seems to have resolved itself... Leaving this here as reminder.
 
 ### Seed Data
