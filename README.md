@@ -4,7 +4,7 @@ This is the third project in the course: "Jobify"
 
 ### *ToDo:* (my own additions)
 
-- Fix the menu-stays-open error
+- Fix the nav-menu-stays-open error
 - OK, holy crap the hoops you have to jump through to set one icon to OPEN the shadcn dropdown menu and a second icon to CLOSE the dropdown menu - involving monkey-patching the radix-ui primitives - is ridiculous. Linking this [solution for accordion](https://github.com/shadcn-ui/ui/issues/1133) in order to revisit this later. :alembic:
 - Update all assets and theme color - maybe a turquoise?
 - Address punycode deprecation
@@ -16,7 +16,12 @@ This is the third project in the course: "Jobify"
 - Add date-applied
 - Add platform applied
 - Add URL for job post
-- Add [eslint-import-resolver-typescript](https://www.npmjs.com/package/eslint-import-resolver-typescript) ? importer error seems to have resolved itself...
+- Add ability to edit dates retrieved for Analytics
+- Update date.js to datefns?
+- Add ability to track the furthest status achieved in any one application - want to see if candidate got to interview stage before being discounted.
+
+### Completed resolved or deprioritized *ToDo's*
+- ~~Add [eslint-import-resolver-typescript](https://www.npmjs.com/package/eslint-import-resolver-typescript) ?~~ importer error seems to have resolved itself... Leaving this here as reminder.
 
 ### Seed Data
 

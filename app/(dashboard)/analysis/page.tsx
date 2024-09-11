@@ -1,6 +1,9 @@
-import { getStatsAction } from "@/utils/actions"
+import { getStatsAction, getChartsDataAction } from "@/utils/actions"
 
 async function AnalysisPage() {
+  const chartData = await getChartsDataAction();
+  console.log("app/(dashboard)/analysis/page.tsx data", chartData);
+
   const stats = await getStatsAction();
   console.log("app/(dashboard)/analysis/page.tsx stats", stats);
 
