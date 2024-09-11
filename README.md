@@ -14,6 +14,7 @@ This is the third project in the course: "Jobify"
   ```
 - Level up this code with (JSDoc)[https://github.com/jsdoc/jsdoc] and https://jsdoc.app/ 
 - Add date-applied
+- FIX the search so that it will actually limit data by the selected job status
 - Add platform applied
 - Add URL for job post
 - Add ability to edit dates retrieved for Analytics

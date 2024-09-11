@@ -105,7 +105,7 @@ function EditJobForm({ jobId }: { jobId: string }) {
             className="self-end capitalize"
             disabled={isPending}
           >
-            {isPending ? "updating..." : "edit job"}
+            {isPending ? "updating..." : "update"}
           </Button>
         </div>
       </form>

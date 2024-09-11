@@ -263,7 +263,7 @@ export async function getChartsDataAction(): Promise<
       return acc;
     }, [] as Array<{ date: string; count: number }>);
 
-    console.log("getChartsDataAction jobs", jobs);
+    // console.log("getChartsDataAction jobs", jobs);
     console.log("getChartsDataAction applicationsPerMonth", applicationsPerMonth);
 
     return applicationsPerMonth;

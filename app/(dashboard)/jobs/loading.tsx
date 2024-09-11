@@ -1,10 +1,12 @@
+import { Skeleton } from "@/components/ui/skeleton";
 
 function loading() {
   return (
-    <h1 className="text-3xl">
-      loading
-    </h1>
-  )
+    <div className="p-8 grid sm:grid-cols-2 md:grid-cols-3  gap-4 rounded-lg border">
+      <Skeleton className="h-10" />
+      <Skeleton className="h-10 " />
+      <Skeleton className="h-10 " />
+    </div>
+  );
 }
-
-export default loading
+export default loading;
