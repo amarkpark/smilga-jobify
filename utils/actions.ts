@@ -58,6 +58,7 @@ export async function getAllJobsAction({
   totalPages: number;
 }> {
   const userId = authenticateAndRedirect();
+  console.log("getAllJobsAction jobStatus: ", jobStatus);
 
   try {
     let whereClause: Prisma.JobWhereInput = {
@@ -96,6 +97,9 @@ export async function getAllJobsAction({
         status: jobStatus,
       };
     }
+
+    console.log("getAllJobsAction whereClause: ", whereClause);
+
 
     const jobs: JobType[] = await prisma.job.findMany({
       where: whereClause,

@@ -14,8 +14,8 @@ import { JobStatus } from "@/utils/types";
 
 function SearchForm() {
   const searchParams = useSearchParams();
-  const search = searchParams.get("search") as string || "";
-  const jobStatus = searchParams.get("searchedJobStatus") as JobStatus || "all";
+  const search = searchParams.get("search")|| "";
+  const jobStatus = searchParams.get("jobStatus") || "all";
 
   const router = useRouter();
   const pathname = usePathname();
@@ -25,6 +25,7 @@ function SearchForm() {
     let params = new URLSearchParams();
 
     const formData = new FormData(event.currentTarget);
+    console.log("formData in handleSubmit: ", formData);
     const search = formData.get("search") as string;
     const searchedJobStatus = formData.get("job-status") as string;
     console.log("submitting search:", search, searchedJobStatus);

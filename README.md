@@ -14,11 +14,11 @@ This is the third project in the course: "Jobify"
   ```
 - Level up this code with (JSDoc)[https://github.com/jsdoc/jsdoc] and https://jsdoc.app/ 
 - Add date-applied
-- FIX the search so that it will actually limit data by the selected job status
+- FIX the search so that it will actually limit data by the selected job status - I think this has to do with transitioning into and out of the `JobStatus[statusKey]` or in here somewhere `components/SearchForm.tsx`
 - Add platform applied
 - Add URL for job post
 - Add ability to edit dates retrieved for Analytics
-- Update date.js to datefns?
+- Update date.js to datefns? Maybe as needed.
 - Add ability to track the furthest status achieved in any one application - want to see if candidate got to interview stage before being discounted.
 
 ### Completed resolved or deprioritized *ToDo's*

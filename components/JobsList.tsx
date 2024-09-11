@@ -8,8 +8,8 @@ import { useQuery } from "@tanstack/react-query";
 
 function JobsList() {
   const searchParams = useSearchParams();
-  const search = searchParams.get("search") as string || "";
-  const jobStatus = searchParams.get("searchedJobStatus") as JobStatus || "all";
+  const search = searchParams.get("search") || "";
+  const jobStatus = searchParams.get("jobStatus") || "all";
 
   const pageNumber = Number(searchParams.get("page")) || 1;
 
