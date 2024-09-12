@@ -6,6 +6,7 @@ This is the third project in the course: "Jobify"
 
 - FIX the `Warning: XAxis: Support for defaultProps will be removed from function components in a future major release. Use JavaScript default parameters instead.` error from recharts in ChartsContainer update
 - FIX the nav-menu-stays-open error
+- ADD clickability to stats cards to initiate filters for analytics page
 - OK, holy crap the hoops you have to jump through to set one icon to OPEN the shadcn dropdown menu and a second icon to CLOSE the dropdown menu - involving monkey-patching the radix-ui primitives - is ridiculous. Linking this [solution for accordion](https://github.com/shadcn-ui/ui/issues/1133) in order to revisit this later. :alembic:
 - Update all assets and theme color - maybe a turquoise?
 - Address punycode deprecation
