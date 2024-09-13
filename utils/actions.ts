@@ -120,7 +120,7 @@ export async function getAllJobsAction({
     return {
       jobs,
       count,
-      page: 1,
+      page,
       totalPages,
     }
   } catch (error) {

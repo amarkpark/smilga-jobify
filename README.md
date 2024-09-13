@@ -4,6 +4,7 @@ This is the third project in the course: "Jobify"
 
 ### *ToDo:* (my own additions)
 
+- FIX pagination active page among others
 - FIX the `Warning: XAxis: Support for defaultProps will be removed from function components in a future major release. Use JavaScript default parameters instead.` error from recharts in ChartsContainer update
 - FIX the nav-menu-stays-open error
 - ADD clickability to stats cards to initiate filters for analytics page
