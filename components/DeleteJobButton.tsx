@@ -1,6 +1,4 @@
 import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
-import JobDetail from "./JobDetail";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteJobAction } from "@/utils/actions";
 import { useToast } from "@/components/ui/use-toast";
@@ -13,6 +11,7 @@ function DeleteJobButton({ id }: { id: string }) {
     onSuccess: (data) => {
       if (!data) {
         toast({
+          variant: "destructive",
           description: "Error deleting job",
         });
         return;
@@ -24,6 +23,7 @@ function DeleteJobButton({ id }: { id: string }) {
       toast({ description: "Job deleted" });
     },
   });
+
   return (
     <Button
       size="sm"
@@ -37,4 +37,4 @@ function DeleteJobButton({ id }: { id: string }) {
   );
 }
 
-export default DeleteJobButton
+export default DeleteJobButton;
